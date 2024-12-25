@@ -42,7 +42,7 @@ const Add = ({ token }) => {
             const response = await axios.post(backendUrl + "/api/product/add", formData, { headers: { token } })
 
             if (response.data.success) {
-                toast.success(response.data.message)
+                toast.success(response.data.message, { autoClose: 3000 })
                 setName('')
                 setDescription('')
                 setImage1(false)
@@ -52,13 +52,13 @@ const Add = ({ token }) => {
                 setPrice('')
 
             } else {
-                toast.error(response.data.message)
+                toast.error(response.data.message, { autoClose: 3000 })
             }
 
 
         } catch (error) {
             console.log(error);
-            toast.error(error.message)
+            toast.error(error.message, { autoClose: 3000 })
 
 
         }
