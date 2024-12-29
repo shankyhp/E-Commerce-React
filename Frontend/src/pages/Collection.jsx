@@ -13,6 +13,10 @@ const Collection = () => {
     const [subCategory, setSubCategory] = useState([]);
     const [sortType, setSortType] = useState('relevant')
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const toggleCategory = (e) => {
         if (category.includes(e.target.value)) {
             setCategory(prev => prev.filter(item => item !== e.target.value))
