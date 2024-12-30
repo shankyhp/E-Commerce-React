@@ -31,7 +31,7 @@ const Verify = () => {
             }
         } catch (error) {
             console.log(error);
-            toast.error(error.message)
+            toast.error(error.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
 
 
         }

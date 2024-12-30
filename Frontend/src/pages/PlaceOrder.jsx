@@ -69,7 +69,7 @@ const PlaceOrder = () => {
                         navigate('/orders')
 
                     } else {
-                        toast.error(response.data.message)
+                        toast.error(response.data.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
                     }
                     break;
 
@@ -80,7 +80,7 @@ const PlaceOrder = () => {
                         const { session_url } = responseStripe.data
                         window.location.replace(session_url)
                     } else {
-                        toast.error(responseStripe.data.message)
+                        toast.error(responseStripe.data.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
                     }
 
                     break;
@@ -96,7 +96,7 @@ const PlaceOrder = () => {
         } catch (error) {
 
             console.log(error);
-            toast.error(error.message)
+            toast.error(error.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
 
         }
 

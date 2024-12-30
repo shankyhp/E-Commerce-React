@@ -17,14 +17,14 @@ const List = ({ token }) => {
 
 
             } else {
-                toast.error(response.data.message, { autoClose: 3000 })
+                toast.error(response.data.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
             }
 
 
 
         } catch (error) {
             console.log(error);
-            toast.error(error.message, { autoClose: 3000 })
+            toast.error(error.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
 
 
         }
@@ -38,16 +38,16 @@ const List = ({ token }) => {
 
             if (response.data.success) {
 
-                toast.success(response.data.message, { autoClose: 3000 })
+                toast.success(response.data.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
                 await fetchList();
             } else {
-                toast.error(response.data.message, { autoClose: 3000 })
+                toast.error(response.data.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
             }
 
         } catch (error) {
 
             console.log(error);
-            toast.error(error.message, { autoClose: 3000 })
+            toast.error(error.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
 
         }
     }

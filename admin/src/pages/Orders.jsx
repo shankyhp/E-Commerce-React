@@ -22,13 +22,13 @@ const Orders = ({ token }) => {
                 setOrders(response.data.orders.reverse())
             }
             else {
-                toast.error(response.data.message)
+                toast.error(response.data.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
 
             }
 
 
         } catch (error) {
-            toast.error(error.message)
+            toast.error(error.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
 
         }
 
@@ -42,7 +42,7 @@ const Orders = ({ token }) => {
             }
         } catch (error) {
             console.log(error);
-            toast.error(response.data.message)
+            toast.error(response.data.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
 
         }
     }

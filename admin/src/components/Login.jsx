@@ -15,7 +15,7 @@ const Login = ({ setToken }) => {
             if (response.data.success) {
                 setToken(response.data.token)
             } else {
-                toast.error(response.data.message)
+                toast.error(response.data.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
 
             }
 
@@ -23,7 +23,7 @@ const Login = ({ setToken }) => {
 
         } catch (error) {
             console.log(error);
-            toast.error(error.message)
+            toast.error(error.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
 
 
         }

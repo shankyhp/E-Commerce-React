@@ -21,7 +21,7 @@ const ShopContextProvider = (props) => {
 
         if (!size) {
 
-            toast.error('Select Product Size')
+            toast.error('Select Product Size', { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
             return;
 
         }
@@ -42,6 +42,7 @@ const ShopContextProvider = (props) => {
             cartData[itemId][size] = 1;
         }
         setCartItems(cartData)
+        toast.success('Product Added in cart', { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
 
         if (token) {
             try {
@@ -50,7 +51,7 @@ const ShopContextProvider = (props) => {
 
             } catch (error) {
                 console.log(error);
-                toast.error(error.message)
+                toast.error(error.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
 
             }
 
@@ -71,7 +72,7 @@ const ShopContextProvider = (props) => {
 
                 } catch (error) {
                     console.log(error);
-                    toast.error(error.message)
+                    toast.error(error.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
 
                 }
 
@@ -95,7 +96,7 @@ const ShopContextProvider = (props) => {
 
             } catch (error) {
                 console.log(error);
-                toast.error(error.message)
+                toast.error(error.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
 
             }
 
@@ -128,13 +129,13 @@ const ShopContextProvider = (props) => {
             if (response.data.success) {
                 setProducts(response.data.products)
             } else {
-                toast.error(response.data.message)
+                toast.error(response.data.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
             }
 
         } catch (error) {
 
             console.log(error);
-            toast.error(error.message)
+            toast.error(error.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
 
         }
     }
@@ -152,7 +153,7 @@ const ShopContextProvider = (props) => {
         } catch (error) {
 
             console.log(error);
-            toast.error(error.message)
+            toast.error(error.message, { autoClose: 3000, closeOnClick: true, pauseOnHover: false, })
 
 
         }
